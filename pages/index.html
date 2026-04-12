@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#292a41",
+                    "surface-variant": "#232439",
+                    "on-tertiary-fixed-variant": "#770033",
+                    "surface-container": "#171829",
+                    "secondary": "#03fbfc",
+                    "on-primary-fixed": "#000000",
+                    "primary-dim": "#7e51ff",
+                    "on-secondary-fixed-variant": "#006666",
+                    "tertiary": "#ff6c95",
+                    "secondary-container": "#006a6a",
+                    "secondary-fixed-dim": "#00ecec",
+                    "on-primary": "#340090",
+                    "surface-container-low": "#111222",
+                    "surface-dim": "#0c0d1b",
+                    "on-primary-container": "#280072",
+                    "inverse-on-surface": "#535465",
+                    "on-secondary-fixed": "#004747",
+                    "on-error-container": "#ffb2b9",
+                    "primary": "#b6a0ff",
+                    "error": "#ff6e84",
+                    "on-surface": "#e5e3f8",
+                    "on-tertiary-container": "#100003",
+                    "secondary-fixed": "#03fbfc",
+                    "tertiary-fixed": "#ff8fa9",
+                    "inverse-primary": "#6834eb",
+                    "tertiary-fixed-dim": "#ff769b",
+                    "error-dim": "#d73357",
+                    "on-surface-variant": "#aaa9bd",
+                    "primary-fixed": "#a98fff",
+                    "primary-container": "#a98fff",
+                    "outline-variant": "#464757",
+                    "on-secondary": "#005c5c",
+                    "on-secondary-container": "#d9fffe",
+                    "tertiary-dim": "#ff6c95",
+                    "on-background": "#e5e3f8",
+                    "surface-container-lowest": "#000000",
+                    "secondary-dim": "#00ecec",
+                    "on-primary-fixed-variant": "#32008a",
+                    "background": "#0c0d1b",
+                    "outline": "#747486",
+                    "surface": "#0c0d1b",
+                    "error-container": "#a70138",
+                    "primary-fixed-dim": "#9c7eff",
+                    "surface-container-highest": "#232439",
+                    "surface-container-high": "#1d1e31",
+                    "inverse-surface": "#fbf8ff",
+                    "tertiary-container": "#fd3e80",
+                    "surface-tint": "#b6a0ff",
+                    "on-tertiary-fixed": "#380014",
+                    "on-error": "#490013",
+                    "on-tertiary": "#48001c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-mesh {
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(182, 160, 255, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(3, 251, 252, 0.1) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(255, 108, 149, 0.1) 0px, transparent 50%);
+        }
+        .glass-panel {
+            background: rgba(23, 24, 41, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(182, 160, 255, 0.3);
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/70 backdrop-blur-xl flex justify-between items-center px-8 h-20 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-4xl font-black italic tracking-tighter text-secondary font-['Space_Grotesk'] drop-shadow-[0_0_10px_rgba(3,251,252,0.8)]">Ota</span>
+<div class="hidden md:flex items-center gap-6 font-['Space_Grotesk'] tracking-tight">
+<a class="text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1" href="#">Explore</a>
+<a class="text-slate-300 hover:text-violet-200 transition-colors hover:bg-white/5 hover:text-cyan-300 px-3 py-1 rounded-md" href="#">Community</a>
+<a class="text-slate-300 hover:text-violet-200 transition-colors hover:bg-white/5 hover:text-cyan-300 px-3 py-1 rounded-md" href="#">Seasonal</a>
+<a class="text-slate-300 hover:text-violet-200 transition-colors hover:bg-white/5 hover:text-cyan-300 px-3 py-1 rounded-md" href="#">Rankings</a>
+</div>
+</div>
+<div class="flex items-center gap-4 font-['Space_Grotesk']">
+<a href="login.html" class="text-slate-300 hover:text-violet-200 transition-colors px-4 py-2">Log in</a>
+<a href="register.html" class="bg-primary-container text-on-primary-container font-bold px-6 py-2 rounded-full transition-all active:scale-95 duration-200 ease-out shadow-[0_0_20px_rgba(182,160,255,0.3)] inline-block text-center">
+  Register
+</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-vh-screen flex flex-col items-center justify-center pt-32 pb-20 px-4 hero-mesh">
+<!-- Background Ambient Character (Asymmetric Bleed) -->
+<div class="absolute top-1/2 left-3/4 -translate-y-1/2 -translate-x-1/2 w-full max-w-4xl opacity-20 pointer-events-none">
+<img alt="stylized cinematic anime character silhouette with glowing neon outlines against a dark indigo background" class="w-full h-auto" data-alt="stylized cinematic anime character silhouette with glowing neon outlines against a dark indigo background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe0TGCQdroHYoJY8u8ft_kLebVftb2iDrPA03d98fgbEZQBh0bHeYdH14D2Zx78Snqwf_rg7x9Hz9SmDOQxZ2A_aaWEcWZArjWxKge6ossM2McDG5dbh7xVqmtYPPun57AlftAJuktdMW6ry92DJZA4uI27ipe5-bDpU5h8pS5FhMNw8jFGf3Y6-uB86HiLwDMCARzdXTXEA3xgSEwYVRUVkSp4nltq107U2QSnBeQ_3rKTnCl5pHjP0cXI3pdt9f2_e47EfkHAA"/>
+</div>
+<div class="container mx-auto relative z-10 text-center">
+<!-- Decorative Accent -->
+<div class="inline-flex items-center gap-2 mb-6 px-4 py-1 rounded-full bg-secondary-container/30 border border-secondary/20">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-secondary font-label text-xs tracking-widest uppercase font-bold">Live People: 42k Online</span>
+</div>
+<!-- Hero Headline -->
+<h1 class="font-headline font-black text-6xl md:text-8xl lg:text-[9rem] leading-[0.9] tracking-tighter mb-12 uppercase italic">
+<span class="block">Looking for</span>
+<span class="block text-stroke hover:text-primary transition-all duration-700">people who</span>
+<span class="block text-primary">watch anime?</span>
+</h1>
+<!-- Hero CTAs -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
+<button class="group relative px-10 py-5 bg-primary rounded-md font-headline font-bold text-xl text-on-primary shadow-[0_0_40px_-10px_rgba(182,160,255,0.6)] hover:shadow-[0_0_50px_-5px_rgba(182,160,255,0.8)] transition-all">
+<a href="register.html" class="relative z-10">Register</a>
+<div class="absolute inset-0 bg-white/20 rounded-md scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</button>
+<a href="login.html" class="px-10 py-5 border-2 border-outline-variant/30 rounded-md font-headline font-bold text-xl text-on-surface hover:border-secondary hover:text-secondary transition-colors backdrop-blur-sm">
+                    Log in
+</a>
+</div>
+</div>
+<!-- Floating UI Elements (Bento Inspiration) -->
+<div class="container mx-auto mt-24 grid grid-cols-1 md:grid-cols-12 gap-6 px-4">
+<!-- Feature Card 1 -->
+<div class="md:col-span-4 bg-surface-container-high p-8 rounded-xl relative overflow-hidden group transition-all hover:translate-y-[-4px]">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-3 text-primary">Global Squads</h3>
+<p class="text-on-surface-variant leading-relaxed">Connect with high-tier fans and casual viewers in curated visual arenas.</p>
+<div class="mt-6 flex -space-x-3">
+<img alt="anime style portrait of a girl with blue hair" class="w-10 h-10 rounded-full border-2 border-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDresvz742mVoxgy9f-JSBJVZZeI2hrlM1p7bh7ktqRE9DtUDy6--jB8uR6NrSZOCwVDO0loC17tTvsaAYeMk2PDdzqznnOs5kDkAr77JsvziYE2gc5feRvyMILHJdx2SIKybf6xlj5IM1RtypNhIc5AQVrH0RfynbSHK-9niWD9Zx4dNbXa6aktV1xYmz_H2yKsXe4el6YWUhEJPlf5hTEdvRfw09N6_msXBaPsSw0VIFVu7dFNwGSR_xWHhcpUKe-raZQiQsOhQ"/>
+<img alt="anime style portrait of a boy with cyberpunk glasses" class="w-10 h-10 rounded-full border-2 border-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHn-mH8ziyGWSu16imxr7sEaTqeozdPaydcfkQbwLkr_ANOxxs-U7l-MnIs3a5h8eodc5-DcAX8yyfaJWeB9ETu7-v7AhXwKxpg_PVnns6ZXI4LvH0L4_Zqj7L80MtkcwWuY7w8SAU6usudcIgF52h21fmU5YuLckqWvgBeKrYUGMtjhQxrmF8pgfwqYrSBReBWWqhZhWdTncYENC6caJXtKRR_OwCO56sLFSEAoolOdcbSAImYToGL8JyP2RQFKFmyXFKJ62fYw"/>
+<img alt="anime style portrait of a mysterious cloaked figure" class="w-10 h-10 rounded-full border-2 border-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB39zhqAOvoqTmDwh6XD5ks1-3VVsdI9R0-llNx2TcKv1a0GNNKufkgx932DHp8-z2zj3fZUzAiMPo3J4TcU15zuIejF6onUQXF3RVhq0-VWsYNN4TTdphU1Q92_Q0Ee4lGLyF6wIc3PeMw9nLyjBOfctIz81HH0Mi0Hpk4lZ180FgEu6B2FkJ8K7gKFfczwPW6PjBj9pANjAMEjE4aHFoNmltPaDWeGH1yBAioA-wcPMBbakKNRkMQw3Se58NKq3mEvEg0Kp7tXQ"/>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border-2 border-surface-container flex items-center justify-center text-[10px] font-bold text-secondary">+12k</div>
+</div>
+</div>
+<!-- Feature Card 2 (Large Aesthetic) -->
+<div class="md:col-span-5 bg-surface-container-highest p-8 rounded-xl relative overflow-hidden flex flex-col justify-end min-h-[300px] group">
+<img alt="cinematic background of a futuristic Tokyo street with rain and neon signs" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqU-7Zd4Tev7Fkfv365JSTwOgHUQNfFA7QUiybLeE7k53av7hSXDkN6rqPq9HFW8LnEA2jzHGP31DL7MUL6nlMc78QY0kTCJPCzKi15EIz7l9YI3DeQa5apAYq3D6Uwl7aZ5YZt2e1QcZaPHybujGk4ifHUgacgNfWpQYoSsRZsctpCau0Rj0I5SvGrzNCisEl_fy8GB_GuIVlnK7gq_MKyP8w152aFSeXhrW66g4w_4UR6ZOJx430LzkX9HLCjZQI02rECB9-KQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest via-transparent to-transparent"></div>
+<div class="relative z-10">
+<span class="font-label text-secondary text-xs font-bold tracking-widest bg-secondary/10 px-2 py-1 rounded">SEASONAL HUB</span>
+<h3 class="font-headline text-3xl font-black mt-2 text-on-surface">Winter 2024 Collection</h3>
+<p class="text-on-surface-variant text-sm mt-2">The most anticipated lineup of the decade, curated by the community.</p>
+</div>
+</div>
+<!-- Feature Card 3 -->
+<div class="md:col-span-3 bg-surface-container-low border border-outline-variant/10 p-8 rounded-xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-tertiary text-4xl">bolt</span>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">Live Rankings</h3>
+<p class="text-on-surface-variant text-sm">Real-time engagement metrics for every airing title.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Section (Asymmetric Editorial) -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-primary/20 blur-[80px] rounded-full"></div>
+<img src="../images/Gojo2.png" alt="Satoru Gojo" class="rounded-full shadow-[0_0_50px_rgba(3,251,252,0.3)] relative z-10"/>
+<div class="absolute -bottom-6 -right-6 glass-panel p-6 rounded-xl border border-white/10 z-20 shadow-xl hidden md:block">
+<p class="font-headline font-bold text-primary">#1 Trending</p>
+<p class="text-2xl font-black italic">JUJUTSU KAISEN</p>
+<div class="flex gap-1 mt-2">
+<span class="w-12 h-1 bg-primary rounded-full"></span>
+<span class="w-4 h-1 bg-outline-variant rounded-full"></span>
+<span class="w-4 h-1 bg-outline-variant rounded-full"></span>
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter leading-none">THE DIGITAL <br/><span class="text-tertiary">STAGE</span> AWAITS</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-lg">Join a new era of fandom. Ota isn't just a forum—it's a high-performance visual engine for anime discovery and community connection. Experience the medium like never before.</p>
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<p class="font-headline text-4xl font-bold text-secondary">98%</p>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest">Join a new era of fandom. Ota isn't just a forum—it's a high-performance visual engine for anime discovery and community connection. Experience the medium like never before.</p>
+</div>
+<div class="space-y-2">
+<p class="font-headline text-4xl font-bold text-primary">2.4M</p>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest">Join a new era of fandom. Ota isn't just a forum—it's a high-performance visual engine for anime discovery and community connection. Experience the medium like never before.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Navigation Shell -->
+<footer class="bg-slate-900 w-full py-12 flex flex-col md:flex-row justify-between items-center px-12 gap-6 tonal-shift-from-surface">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-xl font-black text-slate-100 font-['Space_Grotesk'] tracking-tighter">Ota</span>
+<p class="font-['Manrope'] text-sm uppercase tracking-widest text-slate-500">© 2024 Ota DIGITAL STAGE. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Manrope'] text-sm uppercase tracking-widest">
+<a class="text-slate-500 hover:text-violet-300 opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-violet-300 opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-violet-300 opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a>
+<a class="text-slate-500 hover:text-violet-300 opacity-80 hover:opacity-100 transition-opacity" href="#">Archive</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-primary transition-colors text-on-surface-variant hover:text-on-primary" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-secondary transition-colors text-on-surface-variant hover:text-on-secondary" href="#">
+<span class="material-symbols-outlined text-lg">alternate_email</span>
+</a>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase-config.js"></script>
+
+<script src="auth.js"></script>
+</body></html>

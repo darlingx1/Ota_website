@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ota Chat Nexus - Digital Stage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Manrope:wght@200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#100003",
+                        "on-surface-variant": "#aaa9bd",
+                        "on-background": "#e5e3f8",
+                        "tertiary-fixed-dim": "#ff769b",
+                        "tertiary-container": "#fd3e80",
+                        "on-primary": "#340090",
+                        "surface-container-high": "#1d1e31",
+                        "surface-variant": "#232439",
+                        "on-primary-fixed": "#000000",
+                        "tertiary-dim": "#ff6c95",
+                        "inverse-surface": "#fbf8ff",
+                        "surface-container-highest": "#232439",
+                        "surface-bright": "#292a41",
+                        "secondary-container": "#006a6a",
+                        "secondary-fixed-dim": "#00ecec",
+                        "inverse-primary": "#6834eb",
+                        "primary-fixed-dim": "#9c7eff",
+                        "outline": "#747486",
+                        "error-dim": "#d73357",
+                        "primary-dim": "#7e51ff",
+                        "on-secondary-container": "#d9fffe",
+                        "on-primary-container": "#280072",
+                        "primary-container": "#a98fff",
+                        "tertiary-fixed": "#ff8fa9",
+                        "primary": "#b6a0ff",
+                        "secondary-fixed": "#03fbfc",
+                        "on-error": "#490013",
+                        "on-tertiary-fixed": "#380014",
+                        "secondary-dim": "#00ecec",
+                        "on-secondary-fixed-variant": "#006666",
+                        "error-container": "#a70138",
+                        "secondary": "#03fbfc",
+                        "primary-fixed": "#a98fff",
+                        "on-surface": "#e5e3f8",
+                        "on-secondary": "#005c5c",
+                        "on-primary-fixed-variant": "#32008a",
+                        "on-tertiary": "#48001c",
+                        "outline-variant": "#464757",
+                        "on-error-container": "#ffb2b9",
+                        "surface-container-low": "#111222",
+                        "on-tertiary-fixed-variant": "#770033",
+                        "surface-tint": "#b6a0ff",
+                        "surface": "#0c0d1b",
+                        "on-secondary-fixed": "#004747",
+                        "surface-dim": "#0c0d1b",
+                        "tertiary": "#ff6c95",
+                        "error": "#ff6e84",
+                        "surface-container": "#171829",
+                        "inverse-on-surface": "#535465",
+                        "background": "#0c0d1b",
+                        "surface-container-lowest": "#000000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0c0d1b;
+            color: #e5e3f8;
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(23, 24, 41, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .neon-glow-primary:hover {
+            box-shadow: 0 0 15px rgba(182, 160, 255, 0.3);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #232439;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="overflow-hidden">
+<!-- Background Layer -->
+<div class="fixed inset-0 z-[-1] opacity-40">
+<img class="w-full h-full object-cover" data-alt="Cinematic anime style night city landscape with glowing purple neon signs, dark indigo sky, and futuristic architecture with rain reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB75CGCVjNK1DwghxRGBj_EV-6TM3F7ApkNkQ1ZwoWZk5AZkGnZH704xBhj44hGnv6SD-t1im_VIH401x2xcpVS_breceVg9n5Pc04EWPDyhv90Dz0zB9VFVB7Q_0G_axEWXfIw23BCEs8qt9FYC7bAZb3ddWbKOQd7efOxDw7SltBF-fDxE-aIv221qre0CDspm7RyBF_18Ms_Q353JQWDoh_3PnbbbnEAfA5j0VhiNoVLkBCT20Qfr21wZ7eGVAQzQngnCcmnA"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0c0d1b]/80 to-[#0c0d1b]"></div>
+</div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#111222]/70 backdrop-blur-xl flex justify-between items-center w-full px-6 py-3">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-[#b6a0ff] font-['Space_Grotesk']">Ota Chat Nexus</span>
+<div class="hidden md:flex items-center bg-surface-container rounded-full px-4 py-1.5 gap-3 outline-variant/20 outline outline-1">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64 text-on-surface placeholder:text-on-surface-variant/50" placeholder="Search Nexus..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8 text-sm font-['Space_Grotesk'] tracking-tight">
+<a class="text-[#b6a0ff] border-b-2 border-[#b6a0ff] pb-1 hover:text-[#03fbfc] transition-colors duration-300" href="#">Hub</a>
+<a class="text-[#aaa9bd] hover:text-[#03fbfc] transition-colors duration-300" href="#">Discover</a>
+<a class="text-[#aaa9bd] hover:text-[#03fbfc] transition-colors duration-300" href="#">Missions</a>
+</div>
+<div class="flex items-center gap-4 text-[#b6a0ff]">
+<button class="material-symbols-outlined hover:text-[#03fbfc] scale-95 duration-200">notifications</button>
+<button class="material-symbols-outlined hover:text-[#03fbfc] scale-95 duration-200">settings</button>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden ring-2 ring-primary/20">
+<img alt="User Profile" data-alt="Close up portrait of a young male gamer with cool blue lighting on face and headset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG4m9wQ7QD4P_UxLQA7mkj5JGdc99igFlTAxSOgv0SFmmBCDN-nH9U6i_4pD9YdBYIFnFXMwXX-GnLQoOqpIGDMhGKXx46b_SbzJE2E53Genlbi0hH_J1MfDG6ZhWvFIJkYURm98PT4GyO0TymXM0gnyUVDmVQ9JSzIXG6hVbHbIdyGFlW_J80gBtu-ZYEMVlpGbOSHuRUmvoLazTnf5HapSTHqwrZpqFgbSp3DRFE2ESMFqzhlcldHf603KnkVMbPUpZxmGOYSA"/>
+</div>
+</div>
+</div>
+</nav>
+<div class="flex h-screen pt-[60px]">
+<!-- SideNavBar (Left) -->
+<aside class="h-screen w-72 left-0 top-0 bg-[#0c0d1b] flex flex-col py-8 gap-6 tonal-shift bg-[#111222] font-['Manrope'] font-medium">
+<div class="px-6 mb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-dim flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div>
+<h3 class="text-[#b6a0ff] font-['Space_Grotesk'] font-bold leading-tight">Nexus Hub</h3>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant/60">Digital Stage</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-2">
+<!-- Tab: Direct Messages (Active) -->
+<a class="flex items-center gap-3 py-3 text-[#b6a0ff] font-bold border-l-4 border-[#b6a0ff] pl-4 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="text-sm">Direct Messages</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-[#aaa9bd] pl-5 hover:bg-[#171829] hover:text-[#03fbfc] transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm">Group Chats</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-[#aaa9bd] pl-5 hover:bg-[#171829] hover:text-[#03fbfc] transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">archive</span>
+<span class="text-sm">Archive</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-[#aaa9bd] pl-5 hover:bg-[#171829] hover:text-[#03fbfc] transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="text-sm">Starred</span>
+</a>
+<a class="flex items-center gap-3 py-3 text-[#aaa9bd] pl-5 hover:bg-[#171829] hover:text-[#03fbfc] transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span class="text-sm">Elite Hub</span>
+</a>
+</div>
+<div class="mt-auto px-4 pb-8">
+<!-- Upgrade to Elite Card -->
+<div class="bg-gradient-to-br from-surface-container-highest to-surface-container-low p-5 rounded-xl border border-primary/10 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-20 h-20 bg-primary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all duration-500"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-xs font-headline font-bold tracking-wider text-secondary uppercase">Premium</span>
+</div>
+<h4 class="text-on-surface font-bold text-sm mb-1">Upgrade to Elite</h4>
+<p class="text-on-surface-variant text-[11px] mb-4 leading-relaxed">Unlock custom themes, higher file limits, and nexus badges.</p>
+<button class="w-full py-2 bg-primary-container text-on-primary-container text-xs font-bold rounded-lg neon-glow-primary transition-all active:scale-95">
+                            Level Up Now
+                        </button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Chat Area -->
+<main class="flex-1 flex flex-col bg-surface-container/30 backdrop-blur-sm relative">
+<!-- Chat Header -->
+<div class="px-8 py-4 flex items-center justify-between glass-panel border-b border-white/5">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/30">
+<img alt="Aether_Soul" data-alt="Cyberpunk female character portrait with glowing violet eyes and neon accessories" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuGA0WbVojAu1C1nhCziYcKT0sTB4LIUnPCCljLpbajFnhNSBcrg5j_NZKbHDoknRbznFC_y-OkEp46OsN8jw7b_aW2EtrQOqzbrP60EehZhRQ14BK1CxI0ZCQ0kduIPwHoPmk0sP8izbjsXgsJgbpTY2aqFj4B2YO_yDyeBCQ1z6JL_LYGfAMOUHn9goxzGO9MwAZ8zoVy6DwEhIxCjcyqnzCXcTh02gAcQfF9zoVssJsgqKiNsYtBTnXZQU-FMW1VOFrNY_jFw"/>
+</div>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary rounded-full border-2 border-[#0c0d1b]"></div>
+</div>
+<div>
+<h2 class="text-on-surface font-headline font-bold text-xl tracking-tight flex items-center gap-2">
+                            Aether_Soul
+                            <span class="text-[10px] font-label font-medium bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full uppercase tracking-tighter">Pro member</span>
+</h2>
+<p class="text-on-surface-variant text-xs flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                            Synchronizing neural link...
+                        </p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-variant text-on-surface-variant transition-colors"><span class="material-symbols-outlined">call</span></button>
+<button class="p-2 rounded-full hover:bg-surface-variant text-on-surface-variant transition-colors"><span class="material-symbols-outlined">videocam</span></button>
+<button class="p-2 rounded-full hover:bg-surface-variant text-on-surface-variant transition-colors"><span class="material-symbols-outlined">info</span></button>
+</div>
+</div>
+<!-- Messages Stream -->
+<div class="flex-1 overflow-y-auto px-8 py-6 flex flex-col gap-6">
+<!-- Date Separator -->
+<div class="flex items-center gap-4 py-4">
+<div class="flex-1 h-[1px] bg-outline-variant/20"></div>
+<span class="text-[10px] font-label font-bold text-on-surface-variant uppercase tracking-[0.2em]">Timeline: Cycle 04.22</span>
+<div class="flex-1 h-[1px] bg-outline-variant/20"></div>
+</div>
+<!-- Message Left -->
+<div class="flex gap-4 max-w-[80%]">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0">
+<img alt="Avatar" data-alt="Portrait of stylized anime character with neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkhmjPedw3xsU2nbxjmUc6z0bF1AF-xPR5TQLYZFqVYAPO17ASPPziXF4ymQNNoaCGHYleUuOD4ZVJMevyHV7z0_gWhCRRNB6DVea_6_98XYm_pCO6fRYVgnxxpfs5Y8i_WjMxZ1qVhcbwSMEJCBSP3c5pQvlOBMSCV6svTpPaJuJhHh9sh26UlDaTw35gzEPMRnKr9BFPoFQE5t_6YoWD9eNn4ZaJge3tnLzdp18jEjVy0coJ2jDJ33lIzUZxZ3FWrGeOJMRxdA"/>
+</div>
+<div>
+<div class="glass-panel p-4 rounded-2xl rounded-tl-none border border-white/5 text-on-surface text-sm leading-relaxed">
+                            Hey, did you catch the latest update on the Nexus core? The latency is practically zero now.
+                        </div>
+<span class="text-[10px] text-on-surface-variant/60 mt-1 ml-1 font-label">14:02</span>
+</div>
+</div>
+<!-- Message Right -->
+<div class="flex gap-4 max-w-[80%] self-end flex-row-reverse">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0">
+<img alt="User" data-alt="User profile photo in dark setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm7fm8hVFr9AHUGrRmHk0iKc_vqCHdZhey9TVNJQw6v9HS-bxhujT1SbO1Wg7doVFySkzbPwAqXcXAvSdItBTLR4fvDmX2Nt9agMKts8a1UlS-DWW6dEixE8c5jVpSiXilEz_tcpBtYKsnCWrI1TO5IEEztAhs3hI_gLPWtQdBBSNXhlLY_X7P5wc2OvKNn688rfNStv7Hm150X2q8ocQnHFv4kUZr6BKkQmEW-ixvyQpjV8rEEudF0IRHAbWx0O4RdVKzThKt7Q"/>
+</div>
+<div class="flex flex-col items-end">
+<div class="bg-gradient-to-br from-primary to-primary-dim p-4 rounded-2xl rounded-tr-none text-on-primary-container text-sm leading-relaxed shadow-lg shadow-primary/10">
+                            I just saw it! The new shards are incredibly stable. Ready for the Elite Hub raid tonight?
+                        </div>
+<span class="text-[10px] text-on-surface-variant/60 mt-1 mr-1 font-label">14:05 <span class="text-secondary ml-1">✓✓</span></span>
+</div>
+</div>
+<!-- Message Left -->
+<div class="flex gap-4 max-w-[80%]">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0">
+<img alt="Avatar" data-alt="Anime style female with futuristic tech gear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD59LijXwnqBXZRK8CVVSraF8xm5abUVibu0ZYqrwH8Bn4IN0gCnasMCvzkkixqZ2PVItobpirIdgbC18Nlxk6C6vTBESkB-GlqNb7wxClAYHLMMBhlBKReAMHzZfrfDHKOXKbglhbiJFJrTINV2qXPqbK4jBAWjgBSF_gz9Vg_zQ6ZnOwhw3Px9I2Ke7Hr09C53kuT9FkYxo8uBUq4aDRvUhI_rK3r1ismjoSALB-ucIq3pLc4A5TC5V2lRkpYUgHX2KujtgP6hA"/>
+</div>
+<div>
+<div class="glass-panel p-4 rounded-2xl rounded-tl-none border border-white/5 text-on-surface text-sm leading-relaxed">
+                            Absolutely. I've prepared some assets for the briefing. Take a look at these environment renders.
+                        </div>
+<div class="mt-2 grid grid-cols-2 gap-2 w-72 h-40">
+<img class="w-full h-full object-cover rounded-lg border border-white/10" data-alt="Futuristic cyber tech server room with pink and blue glowing lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVyAxWR1LV2vT0fKm2eZbs0y1k1ictiHkHmk2QJvGj9rEQqIU_E9lqcVPAo39GemFts7ydrWegTF1XQ7eQLWi8ympzoV70SC6k9v8gkEvu4QcumB0Y9DumgWmT52AkXpjtMlutcOpPZWwnq2xJGzbqJhc29UgxHVdx39gzvIKoJAIDqZ2SCEeQtr8dj_24vdEy9n4eSeUET88xWnQxyosy-b7qgIRvpzvzignIG9siEC-oDaFBbYJQtquHT2PYvH0aYbejgiaplg"/>
+<img class="w-full h-full object-cover rounded-lg border border-white/10" data-alt="Abstract neon digital landscape with grid patterns and light streaks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvXgwPhUI5sBpqemvwZ3reqsmVWbJ8mgzs8IY3jLFsamOYUmr2FOWYFT0Y8DqBg73coe0OzJVrexrQSO_VuO202j3LPdob5q6nRC4WTCk-83HqgVNhGy6dI2M__XgH1r7A5WDA2u_lWEpBoENdkejSq1XLU6Wpd1n507OAL4MruVPcNVY5uS2IW5kXgOsMyiOacDCv6BTpj5ZCaLHw8rDFu-rDA9OvkUVTWGsXZGfGgKoatwxRpVhEK0DLe07TEfY1JJlZdTrQuw"/>
+</div>
+<span class="text-[10px] text-on-surface-variant/60 mt-2 ml-1 font-label">14:08</span>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="px-8 py-6">
+<div class="bg-surface-container-highest/80 backdrop-blur-md rounded-2xl p-2 border border-white/5 flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm text-on-surface placeholder:text-on-surface-variant/40 py-3" placeholder="Transmit neural message to Aether_Soul..." type="text"/>
+<div class="flex items-center gap-2 pr-2">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</button>
+<button class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-on-primary shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Profile/Status Sidebar (Right) -->
+<aside class="w-80 bg-[#0c0d1b] tonal-shift bg-[#111222] h-screen overflow-y-auto px-6 py-8 flex flex-col gap-8">
+<!-- Profile Overview -->
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-4">
+<div class="w-32 h-32 rounded-3xl rotate-3 bg-gradient-to-tr from-primary to-secondary p-[2px] transition-transform hover:rotate-0 duration-500">
+<div class="w-full h-full rounded-[22px] bg-[#111222] overflow-hidden -rotate-3 transition-transform hover:rotate-0 duration-500">
+<img class="w-full h-full object-cover" data-alt="Detailed anime-style portrait of a cool female with glowing technology accessories" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADBcgh1TCOPMsvw7odrdaORKE1sp39u4T9_JksUJ6QDD60a09MOV59iBcTT52DRClBhC1GNZRWWG4QGbO4KuWb39PRUBfOQhmOzNFYjdD6bcO9BL_y6VofOevlOPRCy1a3dFh9PpXXCqWnQ7JewpSYieaQyld_QkoRcb5nu2MbpzGc2a6Trddna2XZwCu3Qf2b1hRPo46ieJm9yFkasdOBUuPPvdIiegOoiJS1jXak-xoaBKVQvPjgBquEcBJ6cqZA9l-fVd7N7g"/>
+</div>
+</div>
+<div class="absolute -bottom-3 -right-3 bg-tertiary text-on-tertiary px-3 py-1 rounded-lg font-headline font-extrabold text-sm shadow-xl">LVL 42</div>
+</div>
+<h3 class="text-on-surface font-headline font-bold text-2xl">Aether_Soul</h3>
+<p class="text-on-surface-variant text-sm mt-1">Lead Nexus Architect</p>
+</div>
+<!-- Action Grid -->
+<div class="grid grid-cols-4 gap-2">
+<button class="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary text-xl">person</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-xl">notifications_off</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-tertiary text-xl">favorite</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">more_horiz</span>
+</button>
+</div>
+<!-- Information -->
+<div class="flex flex-col gap-4">
+<h4 class="text-[10px] font-label font-bold text-on-surface-variant uppercase tracking-widest px-1">Neural Profile</h4>
+<div class="bg-surface-container p-4 rounded-xl border border-white/5 space-y-4">
+<div>
+<p class="text-[10px] text-on-surface-variant/50 uppercase font-label">Digital Bio</p>
+<p class="text-xs text-on-surface mt-1 leading-relaxed">Designing the future of decentralized chat networks. 🌌 Exploring the boundary between carbon and silicon.</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant/50 uppercase font-label">Affiliation</p>
+<p class="text-xs text-on-surface mt-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">groups</span>
+                            Nexus Core Development
+                        </p>
+</div>
+</div>
+</div>
+<!-- Shared Media -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-1">
+<h4 class="text-[10px] font-label font-bold text-on-surface-variant uppercase tracking-widest">Shared Assets</h4>
+<button class="text-[10px] text-secondary font-bold hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="aspect-square rounded-lg overflow-hidden border border-white/5 cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Close up of mechanical keyboard with glowing RGB lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV7brp0MKtm23i4wdQ5WcD9cXkZ5EJemOtRKZetS_546cqdo-lkW6lQG-n3IQ6lvaCo0WgMyqLO1J6YxIsR7w9QUMpOc931sD_nuS8Zns6COSdxbd5YnMpsaMbbCrAigDgAZVFyiz5DJLft013dlCQQwZrl_lIqdrYJk2TZEqit2Fs-rchJIstejmNHDX6vO_fIInInIMNRXV6X5Oyj3IMKzWzeaw4ei7ybK__3TmrsvfB50s67Egg2xzI4fURomMeFfUGs3UkVQ"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-white/5 cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Code on screen with blue and purple syntax highlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsySicHqcWUtpd4OabDoC2MdBUNC6sqQ9cQ9nEPAuRfq69Hs0vg6e739zJi3BQ8QzSmkEqxvcBZcvgSxPGaURk0Wnn8jtlubbo54pKTZ1J7PtOd_RV9AULj2bYtUzNz_pGI3STjId-VKYCpLZdbZ2yhy_UApnw8cD4IpFlctO3qvrs-caJLiM3QuIqrJdFreQ90PkR_LWGxPNRWBb_svs0gl69JOpYSiWQldo5muHEfPCONAR7vtrCfyFGsCDGB-_tpje8QJqC3w"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-white/5 cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Digital electronic circuit board with glowing components" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkr6g995c5MZZTqiKPqnxpp-qj29sbjrJvc2Tx2deZaUtBypyetMDpL7uPtCH8wTJVmBYHuYyxn4sIhx_6QcDQ5yuzZqQNgnqZOt3CvFeLx5v_6SEmjjLigoE0-0JYg16ew-R-brlQJt1YPkQVjo9wr6Op2W8IKDwdsoqZIh8zJbmj_vJz_9jr26dDW8sS5Kvd4ESh4um180mhRUm4isbYg2R-nqoqnL7RNyyzOBNYf0Wpj-ozI_fPjexMAwK-8hL3vi4k2mszBg"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-white/5 cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Digital earth from space with data connections glowing across the surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0HQA3PAQ8DFa4mbZZp6rDrHbsjhJfiIFVa0G82HcSBMJj8ndF2y9Orcjzj25wRLcv2R7qAh7apcKh6kfxI9Ut5Z-moi_7dKUf18igvzVny27oRbemncB9jZIrEoJYo9RiG-ri4iWV7LqEll0PjHT6Y7VbfurZNHl5qxfImlbtSv6JBTd8LiauNsvSeNtSO8Wp3zmQjaKvLeFTmTUY7UCDHVJa1Iq9fs8-V3f7VUZ150KxuLjQjxUSqxMdOiUKzBrqrDQhPPfcvQ"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-white/5 cursor-pointer hover:opacity-80 transition-opacity relative">
+<img class="w-full h-full object-cover opacity-30" data-alt="Macro of a CPU chip with intense backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIRmkraH3HhG-oS8zK6wW9MRCDcWFqRXUZsV1UD8DtuhW-YESqb7QKgqGeCb-W1gQhGxb9UC-GVwd9gg7j7WINz8yMqbZQ9M1qtcQnpEweq2Ej3eYloDOX_uJCTtGPAcp_J7QrYjYI6k-Pp7PGSXNxq6Ju1-QS1AWYRuQsmW-dezgsjayrtI6Mm2LZgA-PbeJuBN0TfpcwTetRL1mEQAUAVoKbLZugA3bJXhIdEr2jBWoHCfahcKSVc80rcVTP9w3wRFPIb0UagA"/>
+<span class="absolute inset-0 flex items-center justify-center text-[10px] font-bold">+12</span>
+</div>
+<div class="aspect-square rounded-lg bg-surface-container flex items-center justify-center border border-white/5 hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant">folder_zip</span>
+</div>
+</div>
+</div>
+<!-- Spotlight Profile Mention (Signature Component) -->
+<div class="mt-4 p-4 rounded-2xl bg-surface-variant relative overflow-hidden">
+<div class="absolute -top-6 -left-4 text-7xl font-headline font-extrabold text-tertiary opacity-10">A</div>
+<div class="relative z-10 flex items-center gap-3">
+<div class="w-12 h-12 rounded-full border-2 border-tertiary shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait profile circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPU_HFdd2CJE7dYU6jpDJB8gZ8t66kii5gfjgcsXJQfdysquVDCo3xGWHRqRZuIcRS_RcWHcOB6rA7e7Y4IW3QxAPsOO7GFd334fLmXB1oELc41gllbf8Cj5AgbFGS2I5uEcencWGCMbqTwLuqj0Dr7InIp9lUZERgNjBL1Ynt93nN5-ae6yyqf0X4PfxfHJB7XOG1lJaADF4g1S2PDrCzaq_5vtzmoG4g_Q0jttuicG2KHq898pzbDh2SbzxeKs-N9P-etUhnLA"/>
+</div>
+<div>
+<h5 class="text-on-surface font-bold text-sm">Nexus Architect</h5>
+<p class="text-[10px] text-tertiary font-bold tracking-widest uppercase">Elite Contributor</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</body></html>

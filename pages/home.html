@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ota | Digital Stage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#000000",
+                        "outline": "#747486",
+                        "error": "#ff6e84",
+                        "on-error-container": "#ffb2b9",
+                        "primary-fixed": "#a98fff",
+                        "secondary-dim": "#00ecec",
+                        "tertiary-dim": "#ff6c95",
+                        "on-primary-fixed-variant": "#32008a",
+                        "surface-container-high": "#1d1e31",
+                        "secondary": "#03fbfc",
+                        "on-surface": "#e5e3f8",
+                        "surface-container-low": "#111222",
+                        "tertiary": "#ff6c95",
+                        "on-tertiary-fixed-variant": "#770033",
+                        "surface-dim": "#0c0d1b",
+                        "inverse-surface": "#fbf8ff",
+                        "surface-variant": "#232439",
+                        "on-tertiary": "#48001c",
+                        "primary-dim": "#7e51ff",
+                        "surface": "#0c0d1b",
+                        "primary-container": "#a98fff",
+                        "surface-container": "#171829",
+                        "on-tertiary-fixed": "#380014",
+                        "inverse-primary": "#6834eb",
+                        "on-background": "#e5e3f8",
+                        "tertiary-container": "#fd3e80",
+                        "on-primary-container": "#280072",
+                        "surface-container-highest": "#232439",
+                        "secondary-fixed-dim": "#00ecec",
+                        "secondary-container": "#006a6a",
+                        "inverse-on-surface": "#535465",
+                        "error-container": "#a70138",
+                        "on-secondary": "#005c5c",
+                        "on-error": "#490013",
+                        "primary-fixed-dim": "#9c7eff",
+                        "on-primary": "#340090",
+                        "surface-tint": "#b6a0ff",
+                        "on-surface-variant": "#aaa9bd",
+                        "on-secondary-fixed": "#004747",
+                        "on-secondary-container": "#d9fffe",
+                        "secondary-fixed": "#03fbfc",
+                        "background": "#0c0d1b",
+                        "primary": "#b6a0ff",
+                        "on-secondary-fixed-variant": "#006666",
+                        "on-primary-fixed": "#000000",
+                        "outline-variant": "#464757",
+                        "surface-bright": "#292a41",
+                        "on-tertiary-container": "#100003",
+                        "tertiary-fixed-dim": "#ff769b",
+                        "tertiary-fixed": "#ff8fa9",
+                        "error-dim": "#d73357"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; background-color: #0c0d1b; color: #e5e3f8; }
+        .glass-nav { background: rgba(17, 18, 34, 0.7); backdrop-filter: blur(20px); }
+        .neon-glow:hover { box-shadow: 0 0 15px rgba(182, 160, 255, 0.3); }
+        .text-glow { text-shadow: 0 0 10px rgba(182, 160, 255, 0.5); }
+    </style>
+</head>
+<body class="bg-background min-h-screen overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-[#111222]/70 backdrop-blur-xl fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-indigo-300 font-['Space_Grotesk']">Ota</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-indigo-300 font-bold border-b-2 border-indigo-400 pb-1 font-['Space_Grotesk'] transition-colors" href="#">Feed</a>
+<a class="text-slate-400 font-['Space_Grotesk'] hover:bg-white/5 transition-colors px-2 py-1 rounded" href="#">Discover</a>
+<a class="text-slate-400 font-['Space_Grotesk'] hover:bg-white/5 transition-colors px-2 py-1 rounded" href="#">Arena</a>
+<a class="text-slate-400 font-['Space_Grotesk'] hover:bg-white/5 transition-colors px-2 py-1 rounded" href="#">Club</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-1.5 text-sm w-64 focus:ring-1 focus:ring-primary/50 text-on-surface placeholder:text-on-surface-variant/50" placeholder="Search the Nexus..." type="text"/>
+</div>
+<button class="text-indigo-300 hover:bg-white/5 p-2 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-indigo-300 hover:bg-white/5 p-2 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="text-indigo-300 hover:bg-white/5 p-2 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-24 md:pb-12 px-4 md:px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Background Ambient Cityscape (Decorative) -->
+<div class="fixed inset-0 -z-10 opacity-30 pointer-events-none">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface to-background"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="cinematic anime cityscape at night with neon lights reflecting on wet streets and towering futuristic skyscrapers in deep indigo and purple tones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmzaCtDFvAdiw7SkPP2BhCOiguYX3322kmqS0Aw8ONnSvghdilb5Lk7mgiOE_yHh4zQGD5kQR-hqjSWO0NvACRfU6TQn7c8YSep7MPydbdrKbNGczMVlxl-HH7c9YFHUAGAJUhc1bbCPTlKDaqmfVq0QiirFJBYbXxSdLVPixdZIGRmSMwqGizzgTDvaadaLKfdG5fNZd-f3q5m4qP0D4xbc1VnKjUY6EkU2enghNYwvjXZ-qvXWgvf-t0o6pp7snVehTwIJ_JCg')"></div>
+</div>
+<!-- Left Sidebar: Profile Quick Look -->
+<aside class="hidden lg:block lg:col-span-3 space-y-6">
+<div class="bg-surface-container-highest rounded-xl p-6 overflow-hidden relative group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl -mr-16 -mt-16 group-hover:bg-primary/20 transition-all"></div>
+<div class="relative z-10">
+<div class="w-20 h-20 rounded-xl overflow-hidden mb-4 border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="close-up of a stylish anime character avatar with neon hair and futuristic visor in a high-tech setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWSup-Mz2-0dQM2G4oN1SJ3R2nIjAJhEMQAC-qlmURWiD1cj5_tIe8ytTdA5v3xzFOy4jRepJusaF2iMT4MTOT7U0oTwsjNhzZzoR4xTZw571-MhV_T7Sdbh1LAMvyfyFIzVlIKor5jcFNl_Wm3FUYqoYZXkTRn6g7X2dCSiGWE971Va8waPV7NxoVgjOIazK5zb0PRKsbOrvHgFAftEhuKFxIlWG2le_75kafsAyN51VD9VR39SqJ7M7Scn53iBtd3tOdj5vOvg"/>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Neo_Kenshin</h3>
+<p class="text-sm text-on-surface-variant font-label mb-4">Ronin Level 42</p>
+<div class="flex gap-4 text-xs font-label">
+<div><span class="text-primary font-bold">1.2k</span> <span class="opacity-60">Followers</span></div>
+<div><span class="text-primary font-bold">842</span> <span class="opacity-60">Following</span></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-1 overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="font-headline font-medium">Chat Nexus</span>
+</div>
+<span class="bg-tertiary text-on-tertiary text-[10px] px-1.5 py-0.5 rounded font-bold">12 NEW</span>
+</button>
+</div>
+<div class="space-y-4">
+<h4 class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold px-2">Trending Missions</h4>
+<div class="bg-surface-container rounded-xl divide-y divide-white/5 overflow-hidden">
+<a class="block p-4 hover:bg-white/5 transition-colors" href="#">
+<span class="text-secondary text-xs font-label">#Cyber_Spring_2024</span>
+<p class="text-sm text-on-surface mt-1">Season recap megathread</p>
+</a>
+<a class="block p-4 hover:bg-white/5 transition-colors" href="#">
+<span class="text-tertiary text-xs font-label">#Arena_Tournament</span>
+<p class="text-sm text-on-surface mt-1">Final brackets released</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Central Feed: Bento Inspired -->
+<section class="lg:col-span-6 space-y-8">
+<!-- Create Post -->
+<div class="bg-surface-container rounded-xl p-4 flex gap-4 items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="small circular avatar of a stylized anime character" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiUGF6hSvjfVo9VHKppyJCBmf27FYtv1zF1MVWG7I925s-OvGZtyrdexapw2Bjr-lq9HVvsOAqUhdvYD1tJyx2k07MFl_NARmleCPexNMfKRsJfXF-fCuUsgGqOpb-6-8B8aEb0RFgTpThsxdGpqWwc7FtMMN3ENDEvylmapW4xgn0JkspFnP8r-oQcfcqbvE5K8Qse8JRDIh9hkDR4XoxvzIFltEtR4jNhHgg_oN2dN31A1QuG9LgrXtIesBAuE8J86LJra4jWw"/>
+</div>
+<button class="bg-surface-container-low hover:bg-surface-container-high transition-colors text-left text-on-surface-variant/60 text-sm px-4 py-2.5 rounded-full w-full font-body">
+                    Broadcast your signal to the community...
+                </button>
+<button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">image</span>
+</button>
+</div>
+<!-- Post Card 1 -->
+<article class="bg-surface-container-highest rounded-2xl overflow-hidden group">
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="anime girl profile with blue hair and tech accessories looking away" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPbE8zEXwy09FxNh4ZvgVUf_WtsUCIkU9IAbRxSqDC9Rdgi_P7K18WiGI6AWZfb0RCTpXGkKmoMcDdb399iLK6zzW-AQE0Mt53D05_02UkacipaMI1YvUWGM8uVFrU-QccrkrOrfTZbxOTi-Vgwrk4tJ5rvRbmN4PWkJx9jh8M_Kc45jhNNFO0UWxYAzquMh4BtqshtDfNyX44PbPBo6gO6sp0Bni-HHsg6V5n0AfubJbDuByXIWyN24oRanas68yzRQKoA_m3kA"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Lain_V2</h4>
+<span class="text-[10px] text-on-surface-variant font-label">2 hours ago • <span class="text-secondary">Discussion</span></span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="px-4 pb-4">
+<p class="text-sm leading-relaxed text-on-surface/90 font-body">
+                        Just finished the finale of "Cyber Drift: Neon Edge". The animation in that final sequence was absolutely cinematic. The way they used chromatic aberration to simulate speed was insane! ⚡️
+                    </p>
+</div>
+<div class="relative w-full aspect-video overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="vibrant anime style illustration of a futuristic racing car speeding through a glowing neon city at night with motion blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwFT-WvvHEfpKgpUIjKbiuhbIDdYAZZUdkHHKwqzW5dY5BCiwglBUFNsVa9WU7jCQlSGX0DVBprKQMUnhmnK3H6dzqac4dbHyGReQiB6uEUsjH99Yy2xj6SxibPn8b1PTc7KEi_I2LHT3ogKbiMewxui3DCIvt1Jfo4iSt4wFeY4Fv2brMjMNuiX4Qy-YT4e2dmW0jFzT66SVZXG7f0O3eXakL1QmQiGJdex0hYR5tDw4vQuWO0_HWOHvkHnHrSJmFHf8K2cqpww"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> Trending
+                        </span>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-xs font-label">1.4k</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-xl">comment</span>
+<span class="text-xs font-label">84</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-xl">share</span>
+<span class="text-xs font-label">12</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</article>
+<!-- Post Card 2: No Image (Text Focus) -->
+<article class="bg-surface-container rounded-2xl p-6 relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-tertiary/5 blur-3xl rounded-full"></div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="stylized character portrait in a dark atmospheric room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO9SHVdE8pRiGI-JxlSVVR6OodY1Ah9cD-4V7UuuioQpJpXDjkw7LdxHq1_Wx6-aW-YuBSe4UA4o1CJdqjbyfhud73_y6OLNkpxCCo6Fnbq2Dz0hjaRU3kmUkTK5ChPJZbQtyryCVzIrQDwlnGSsRnLI1aT2p7NbChoUkyG6daNfB8685vxhwCOrRvEE3sMdxom3ua0RN-uIzDar5618Iqc5UTgueD8N2Q9TPGasgv68LEzrkjQuwjuJUc3O1POT_zwV_2pZoJSw"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Zero_Sum</h4>
+<span class="text-[10px] text-on-surface-variant font-label">4 hours ago • <span class="text-tertiary">Arena</span></span>
+</div>
+</div>
+<p class="font-headline text-lg md:text-xl font-bold leading-tight text-on-surface mb-6">
+                    Looking for a tank for the upcoming <span class="text-primary">Neon Siege</span> event. Must have level 30+ gear and be active during PST peak hours. DM if interested.
+                </p>
+<div class="flex items-center justify-between border-t border-white/5 pt-4">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<button class="text-on-surface-variant hover:text-secondary transition-all">
+<span class="material-symbols-outlined text-xl">forum</span>
+</button>
+</div>
+<button class="bg-primary/10 hover:bg-primary/20 text-primary px-4 py-1.5 rounded-lg text-xs font-bold font-label transition-colors">
+                        Send Message
+                    </button>
+</div>
+</article>
+</section>
+<!-- Right Sidebar: Community & Live -->
+<aside class="hidden lg:block lg:col-span-3 space-y-8">
+<!-- Spotlight Profile -->
+<div class="bg-surface-variant rounded-xl p-6 relative overflow-hidden">
+<div class="absolute -left-4 -bottom-4 opacity-10">
+<span class="text-8xl font-black font-headline text-tertiary">M</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-label text-[10px] uppercase tracking-widest text-on-tertiary-container font-bold mb-4">Artist Spotlight</h4>
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 rounded-full border-2 border-tertiary p-0.5">
+<img class="w-full h-full object-cover rounded-full" data-alt="highly detailed anime digital painting of a female artist character with vibrant pink highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs9p_DlySgTkAhkryy0GnThJSp9q-MQCf7UhBeAyZ5Gd9XcUY5SPozMzEeSZ-XaAuG2BlOm51q8s7hJAnG8EjqnloJ7lamiNuwD7JbZ9eZHRk9-WjKDbuhk5fnlK83lkWhi3c67tM8cUTBI7UZeU_8OnJBUG0_J-T6cJD0DbHPfpHMnq0WVkbKUsno0xIxruO4rR6gclc14qPCnY4ftG4sgiyGrNJUny98cuAnsZN74Lra_6uLNvYT09AJGn9wWlZ3vnZXPWYxUA"/>
+</div>
+<div>
+<h5 class="font-bold text-on-surface">Miyu_Art</h5>
+<span class="text-xs text-on-surface-variant">2.4k Creations</span>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-tertiary to-primary py-2 rounded-lg font-bold text-sm text-on-primary-container shadow-lg shadow-tertiary/20 hover:scale-[1.02] transition-transform">
+                        View Portfolio
+                    </button>
+</div>
+</div>
+<!-- Live Now -->
+<div class="space-y-4">
+<div class="flex items-center justify-between px-2">
+<h4 class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Live Streams</h4>
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+</div>
+<div class="space-y-3">
+<div class="bg-surface-container-low p-3 rounded-xl flex gap-3 group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="w-16 h-10 rounded overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="screenshot of a high-octane anime video game with glowing effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAemBsl-rgkSMaJMWS4H0EFMfErOrGQLmlyu0p7C_DH1C7WhDndJrlGmXNyOi42q7882d5exM-IYkTJc8YOU3EYCKsZQ-46uTJOqq063lSY-xF5M7EKWcZEsn6apAJaY_5G5rgrDph-n5xhFEZ5I4dYfzCs3s98Lmhihh-CkqJAvW1Xz9HEbm78szGHBVgbun1n63HKzsWJUeJWeIFpje3nPT22CiRO6dF1-VH--SIZdQL9plnTdG-Q7y96lv_1nz3ez3lNR2D03w"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-sm">play_arrow</span>
+</div>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold text-on-surface truncate">Ranked Climb #40</p>
+<p class="text-[10px] text-on-surface-variant">842 watching</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl flex gap-3 group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="w-16 h-10 rounded overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="anime girl character working at a digital drawing tablet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7N3fAOt9IMGwSgQ4_8Br3kNMMN-V68qZAI-jC088xC2tBsaZ3zFMF53ye-KSZEpLkv7J_G8yhLhwfybfBzpA5aEQFgHGh-v6yOHHBpXbEVx36xlNh2-sPhsIFLLYlAot94o20Ml2N2tIFQuYrUB9ZmGJTepbvpM1Qagq4fyuhOdaVz-uEb6sc3yxFhN5-iMqCJ9FOMXlTaw0OOR30NsOyXRk5xcr2kg1aKXHvqNCCc6AzKfZ9itIqZCC8GFLEi_SILAALv20VNQ"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-sm">play_arrow</span>
+</div>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold text-on-surface truncate">Character Design Live</p>
+<p class="text-[10px] text-on-surface-variant">1.1k watching</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 pb-safe bg-[#111222]/70 backdrop-blur-xl rounded-t-2xl shadow-[0_-4px_20px_rgba(182,160,255,0.1)]">
+<a class="flex flex-col items-center justify-center bg-indigo-500/20 text-indigo-300 rounded-xl px-4 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dynamic_feed</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-cyan-400 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold mt-1">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-cyan-400 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">swords</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold mt-1">Arena</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-cyan-400 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase font-bold mt-1">Club</span>
+</a>
+</nav>
+<!-- Floating Action Button (Contextual) -->
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-primary text-on-primary-container rounded-2xl shadow-xl shadow-primary/30 flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</body></html>

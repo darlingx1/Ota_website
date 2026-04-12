@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | Ota</title>
+<!-- Font Links -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#464757",
+                    "on-secondary": "#005c5c",
+                    "on-secondary-container": "#d9fffe",
+                    "on-background": "#e5e3f8",
+                    "tertiary-dim": "#ff6c95",
+                    "surface-container-lowest": "#000000",
+                    "secondary-dim": "#00ecec",
+                    "outline": "#747486",
+                    "background": "#0c0d1b",
+                    "on-primary-fixed-variant": "#32008a",
+                    "error-container": "#a70138",
+                    "primary-fixed-dim": "#9c7eff",
+                    "surface": "#0c0d1b",
+                    "on-tertiary-fixed": "#380014",
+                    "surface-tint": "#b6a0ff",
+                    "inverse-surface": "#fbf8ff",
+                    "surface-container-highest": "#232439",
+                    "surface-container-high": "#1d1e31",
+                    "tertiary-container": "#fd3e80",
+                    "on-tertiary": "#48001c",
+                    "on-error": "#490013",
+                    "surface-container": "#171829",
+                    "surface-variant": "#232439",
+                    "surface-bright": "#292a41",
+                    "on-tertiary-fixed-variant": "#770033",
+                    "on-primary-fixed": "#000000",
+                    "on-secondary-fixed-variant": "#006666",
+                    "primary-dim": "#7e51ff",
+                    "secondary": "#03fbfc",
+                    "secondary-fixed-dim": "#00ecec",
+                    "secondary-container": "#006a6a",
+                    "tertiary": "#ff6c95",
+                    "on-primary-container": "#280072",
+                    "inverse-on-surface": "#535465",
+                    "on-primary": "#340090",
+                    "surface-dim": "#0c0d1b",
+                    "surface-container-low": "#111222",
+                    "on-error-container": "#ffb2b9",
+                    "primary": "#b6a0ff",
+                    "on-secondary-fixed": "#004747",
+                    "on-surface": "#e5e3f8",
+                    "error": "#ff6e84",
+                    "on-tertiary-container": "#100003",
+                    "tertiary-fixed-dim": "#ff769b",
+                    "inverse-primary": "#6834eb",
+                    "error-dim": "#d73357",
+                    "secondary-fixed": "#03fbfc",
+                    "tertiary-fixed": "#ff8fa9",
+                    "primary-container": "#a98fff",
+                    "on-surface-variant": "#aaa9bd",
+                    "primary-fixed": "#a98fff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(12, 13, 27, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .shonen-glow {
+            box-shadow: 0 0 50px rgba(182, 160, 255, 0.15);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(182, 160, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-x-hidden">
+<!-- Cinematic Background -->
+<div class="fixed inset-0 -z-10 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Cinematic high-fidelity anime-style night city street with glowing neon signs, rainy reflections on pavement, and cyberpunk architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAICVuUfZF0h6ems4zxlMTMjfcVVMm-SGUTUD6NL0TJ0BBVzxh1Osu0zvInzuXu_gir-SLwDaDA778JroE37eSH8xBQsBO5dItCLaikga1lN-AKCFeCPhmc5wyK0nSNCMQ6nU-cb-Ct_kgORdYEvQoLAcFLaUIdCBqu1wVXKfpcDkH4xRtu9sqK5TOeVGfCRejhDdBdIEK9zstTJEVNN00bucSYXSmu3Pp5oi_zPR1fS9rtHiDeSECFmyK3IDZS2ordMbvGnoephA"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background"></div>
+<div class="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-primary/10 blur-[120px]"></div>
+<div class="absolute bottom-[-5%] left-[-5%] w-[40%] h-[40%] rounded-full bg-secondary/10 blur-[100px]"></div>
+</div>
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-6">
+<a href="index.html" class="text-4xl font-black italic tracking-tighter text-secondary font-['Space_Grotesk'] drop-shadow-[0_0_10px_rgba(3,251,252,0.8)]">Ota</a>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">help_outline</span>
+<span class="font-label text-[10px] font-bold uppercase tracking-widest hidden md:inline">Support</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-6 pt-24 pb-12">
+<div class="relative w-full max-w-lg">
+<!-- Asymmetric Decorative Element: Character / Art Bleed -->
+
+<!-- Login Container (Glassmorphism) -->
+<div class="glass-panel rounded-xl p-8 md:p-12 shonen-glow relative z-10 overflow-hidden">
+<!-- Decorative corner accent -->
+<div class="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-primary/40 rounded-tl-xl pointer-events-none"></div>
+<!-- Branding/Headers -->
+<div class="mb-10 text-center md:text-left">
+<h1 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-on-surface mb-3 leading-tight">
+                        WELCOME BACK
+                    </h1>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-widest opacity-80">
+                        Sign in to continue your legacy.
+                    </p>
+</div>
+<form class="space-y-6">
+    <div id="error-message" class="hidden bg-error-container/20 border border-error/50 text-error text-[10px] p-3 rounded-lg mb-2 text-center font-label uppercase tracking-widest animate-pulse">
+        </div>
+
+    <div class="space-y-2">
+        <label class="font-label text-xs font-bold text-primary uppercase tracking-wider block ml-1">Email Address</label>
+        <div class="relative">
+            <input id="email" class="w-full bg-surface-container-low/50 border border-outline-variant/30 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 text-on-surface rounded-lg px-4 py-4 placeholder:text-outline/50 transition-all outline-none" placeholder="commander@ota.world" type="email" required/>
+        </div>
+    </div>
+
+    <div class="space-y-2">
+    <div class="flex justify-between items-center px-1">
+        <label class="font-label text-xs font-bold text-primary uppercase tracking-wider block">Password</label>
+        <a href="forgot_password.html" class="text-[10px] font-label text-tertiary-dim uppercase tracking-widest hover:text-tertiary transition-colors">Forgot Password?</a>
+    </div>
+    <div class="relative">
+        <input id="password" class="w-full bg-surface-container-low/50 border border-outline-variant/30 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 text-on-surface rounded-lg px-4 py-4 pr-12 placeholder:text-outline/50 transition-all outline-none" placeholder="••••••••••••" type="password" required/>
+        
+        <button type="button" id="togglePassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-outline/60 hover:text-primary transition-colors focus:outline-none">
+            <span id="eyeIcon" class="material-symbols-outlined text-[20px]">visibility</span>
+        </button>
+    </div>
+</div>
+
+    <button class="group relative w-full bg-primary text-on-primary-container font-headline font-bold py-5 rounded-lg overflow-hidden transition-all active:scale-95 hover:shadow-[0_0_30px_rgba(182,160,255,0.4)]" type="submit">
+        <span class="relative z-10 tracking-widest">LOG IN</span>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary to-primary-dim opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    </button>
+</form>
+<!-- Divider -->
+<div class="my-10 flex items-center gap-4">
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+<span class="font-label text-[10px] text-outline uppercase tracking-[0.3em] whitespace-nowrap">OR SIGN IN WITH</span>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 bg-surface-container-high/40 hover:bg-surface-container-highest/60 border border-outline-variant/20 py-4 rounded-lg transition-all text-on-surface group">
+<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors">chat</span>
+<span class="font-label text-xs font-bold tracking-widest">DISCORD</span>
+</button>
+<button class="flex items-center justify-center gap-3 bg-surface-container-high/40 hover:bg-surface-container-highest/60 border border-outline-variant/20 py-4 rounded-lg transition-all text-on-surface group">
+<span class="material-symbols-outlined text-xl group-hover:text-secondary transition-colors">account_circle</span>
+<span class="font-label text-xs font-bold tracking-widest">GOOGLE</span>
+</button>
+</div>
+</div>
+<!-- Footer Link -->
+<div class="mt-8 text-center">
+<a class="group inline-flex items-center gap-2" href="#">
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-wider">New to the stage?</span>
+<a href="register.html" class="text-secondary font-headline font-bold text-xs uppercase tracking-widest group-hover:underline underline-offset-4 transition-all">Register here</a>
+</a>
+</div>
+</div>
+</main>
+<!-- Site Footer -->
+<footer class="w-full py-8 flex flex-col md:flex-row items-center justify-between px-8 gap-4 bg-[#0c0d1b]/90 backdrop-blur-xl border-t border-outline-variant/10">
+<p class="text-slate-500 font-label text-[10px] uppercase tracking-widest">
+            © 2024 OTA DIGITAL STAGE. ALL RIGHTS RESERVED.
+        </p>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-primary font-label text-[10px] uppercase tracking-widest transition-all" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-primary font-label text-[10px] uppercase tracking-widest transition-all" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-primary font-label text-[10px] uppercase tracking-widest transition-all" href="#">Guidelines</a>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../supabase-config.js"></script>
+<script src="../auth.js"></script>
+</body></html>

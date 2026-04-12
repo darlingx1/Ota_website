@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ota - Join the Digital Stage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#48001c",
+                        "secondary": "#03fbfc",
+                        "primary-fixed": "#a98fff",
+                        "secondary-dim": "#00ecec",
+                        "on-secondary-fixed-variant": "#006666",
+                        "error-container": "#a70138",
+                        "on-surface": "#e5e3f8",
+                        "on-secondary": "#005c5c",
+                        "on-primary-fixed-variant": "#32008a",
+                        "on-tertiary-fixed": "#380014",
+                        "outline-variant": "#464757",
+                        "on-error-container": "#ffb2b9",
+                        "surface-tint": "#b6a0ff",
+                        "surface": "#0c0d1b",
+                        "on-secondary-fixed": "#004747",
+                        "surface-container-low": "#111222",
+                        "on-tertiary-fixed-variant": "#770033",
+                        "surface-container-lowest": "#000000",
+                        "inverse-on-surface": "#535465",
+                        "background": "#0c0d1b",
+                        "surface-dim": "#0c0d1b",
+                        "surface-container": "#171829",
+                        "tertiary": "#ff6c95",
+                        "error": "#ff6e84",
+                        "surface-container-high": "#1d1e31",
+                        "on-primary": "#340090",
+                        "on-background": "#e5e3f8",
+                        "tertiary-fixed-dim": "#ff769b",
+                        "tertiary-container": "#fd3e80",
+                        "on-tertiary-container": "#100003",
+                        "on-surface-variant": "#aaa9bd",
+                        "inverse-surface": "#fbf8ff",
+                        "tertiary-dim": "#ff6c95",
+                        "surface-variant": "#232439",
+                        "on-primary-fixed": "#000000",
+                        "error-dim": "#d73357",
+                        "outline": "#747486",
+                        "primary-fixed-dim": "#9c7eff",
+                        "secondary-fixed-dim": "#00ecec",
+                        "inverse-primary": "#6834eb",
+                        "secondary-container": "#006a6a",
+                        "surface-container-highest": "#232439",
+                        "surface-bright": "#292a41",
+                        "on-error": "#490013",
+                        "secondary-fixed": "#03fbfc",
+                        "primary-container": "#a98fff",
+                        "primary": "#b6a0ff",
+                        "tertiary-fixed": "#ff8fa9",
+                        "primary-dim": "#7e51ff",
+                        "on-secondary-container": "#d9fffe",
+                        "on-primary-container": "#280072"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .font-label { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(23, 24, 41, 0.65);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 15px rgba(182, 160, 255, 0.3);
+        }
+        .neon-glow-primary:hover {
+            box-shadow: 0 0 25px rgba(182, 160, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0c0d1b]/70 backdrop-blur-xl flex justify-between items-center px-8 h-20 w-full">
+<a href="index.html" class="text-4xl font-black italic tracking-tighter text-secondary font-['Space_Grotesk'] drop-shadow-[0_0_10px_rgba(3,251,252,0.8)]">Ota</a>
+<!-- Navigation Links (Hidden on Mobile, but defined as top-level shell) -->
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#aaa9bd] hover:text-[#e5e3f8] transition-colors font-headline tracking-tight" href="#">Discover</a>
+<a class="text-[#aaa9bd] hover:text-[#e5e3f8] transition-colors font-headline tracking-tight" href="#">Community</a>
+<a class="text-[#aaa9bd] hover:text-[#e5e3f8] transition-colors font-headline tracking-tight" href="#">Events</a>
+</div>
+<div class="flex items-center gap-4">
+
+</div>
+</nav>
+<!-- Main Registration Section -->
+<main class="relative flex-grow flex items-center justify-center pt-20 pb-12 px-6">
+<!-- Cinematic Background Image -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="cinematic anime style cyberpunk city at night with glowing purple and cyan neon signs rainy reflections on dark asphalt streets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj1CHXULA_gLTAug7_8cZWPoKSuBc8ua5BEX5rqVv5i6Fg68WhsYg58U5lgyuay9PyooWMiRPoKSOtjX2gKVaGtIAv0pprbHKag5LbUHfCJyuWHyNXcr43CQ6MQHfivfO0gV2kL4AO9sECTusQkVQWhHnn_DDEpcZLIlOg4kCuC9DQW0CsRevM1BG8xXcTErCx9m4u3C1loZ2PRdKzSZ4EbYBQvOpHC9wTKqNk1AZkrLLsquth_TOR6vCBdkCKlkvYK0sic9j8sg"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
+</div>
+<!-- Registration Container -->
+<div class="relative z-10 w-full max-w-[1100px] grid md:grid-cols-2 items-center gap-12 lg:gap-24">
+<!-- Left Side: Editorial Content -->
+<div class="hidden md:block">
+<span class="font-label text-secondary tracking-[0.3em] uppercase text-[0.6875rem] font-bold mb-4 block">Stage 01: Onboarding</span>
+<h1 class="font-headline text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tighter mb-6 text-on-surface">
+                    OWN YOUR <span class="text-primary italic">LEGACY.</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed mb-8">
+                    Join the digital stage where anime culture meets high-end community experience. Connect, create, and conquer.
+                </p>
+<div class="flex gap-4">
+<div class="flex flex-col">
+<span class="text-2xl font-headline font-bold text-on-surface">240K+</span>
+<span class="font-label text-[0.625rem] text-on-surface-variant uppercase tracking-widest">Active Souls</span>
+</div>
+<div class="w-px h-10 bg-outline-variant/30 self-center"></div>
+<div class="flex flex-col">
+<span class="text-2xl font-headline font-bold text-on-surface">1.2M</span>
+<span class="font-label text-[0.625rem] text-on-surface-variant uppercase tracking-widest">Creations</span>
+</div>
+</div>
+</div>
+<!-- Right Side: The Glass Form -->
+<div class="glass-card rounded-xl p-8 md:p-10 border border-outline-variant/20 shadow-2xl">
+<div class="mb-8">
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-2">Create Account</h2>
+<p class="text-on-surface-variant text-sm">Become a part of the Ota evolution.</p>
+</div>
+<form class="space-y-5">
+<div class="space-y-2">
+<label class="font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant ml-1">Username</label>
+<input id="username" class="w-full bg-surface-container-highest/50 border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/50 placeholder:text-outline/50 transition-all" placeholder="otaku_soul" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant ml-1">Email Address</label>
+<input id="email" class="w-full bg-surface-container-highest/50 border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/50 placeholder:text-outline/50 transition-all" placeholder="name@example.com" type="email"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="space-y-2">
+<label class="font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant ml-1">Password</label>
+<input id="password" class="w-full bg-surface-container-highest/50 border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/50 placeholder:text-outline/50 transition-all" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant ml-1">Confirm</label>
+<input id="confirm-password"class="w-full bg-surface-container-highest/50 border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/50 placeholder:text-outline/50 transition-all" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 rounded-lg font-headline font-bold text-lg uppercase tracking-wider neon-glow-primary hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 mt-4" type="submit">
+                        Create Account
+                    </button>
+</form>
+<div class="mt-8 flex items-center gap-4">
+<div class="h-px flex-grow bg-outline-variant/30"></div>
+<span class="font-label text-[0.625rem] text-on-surface-variant uppercase tracking-[0.2em] whitespace-nowrap">Or sign up with</span>
+<div class="h-px flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="mt-6 grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 bg-surface-container-high hover:bg-surface-bright transition-colors py-3 rounded-lg border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-[#5865F2] group-hover:scale-110 transition-transform">social_leaderboard</span>
+<span class="font-label text-[0.75rem] font-bold uppercase tracking-widest">Discord</span>
+</button>
+<button class="flex items-center justify-center gap-3 bg-surface-container-high hover:bg-surface-bright transition-colors py-3 rounded-lg border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-tertiary group-hover:scale-110 transition-transform">language</span>
+<span class="font-label text-[0.75rem] font-bold uppercase tracking-widest">Google</span>
+</button>
+</div>
+<p class="mt-8 text-center text-on-surface-variant text-[0.75rem]">
+                    Already a member? <a class="text-secondary font-bold hover:underline" href="login.html">Log in to Stage</a>
+</p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#111222] w-full py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="text-lg font-black text-[#e5e3f8] font-headline">Ota</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Plus_Jakarta_Sans'] text-[0.6875rem] uppercase tracking-widest text-[#aaa9bd] hover:text-[#b6a0ff] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Plus_Jakarta_Sans'] text-[0.6875rem] uppercase tracking-widest text-[#aaa9bd] hover:text-[#b6a0ff] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Plus_Jakarta_Sans'] text-[0.6875rem] uppercase tracking-widest text-[#aaa9bd] hover:text-[#b6a0ff] transition-colors" href="#">Community Guidelines</a>
+<a class="font-['Plus_Jakarta_Sans'] text-[0.6875rem] uppercase tracking-widest text-[#aaa9bd] hover:text-[#b6a0ff] transition-colors" href="#">Support</a>
+</div>
+<div class="font-['Plus_Jakarta_Sans'] text-[0.6875rem] uppercase tracking-widest text-[#aaa9bd]">
+                © 2024 OTA DIGITAL STAGE. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../supabase-config.js"></script>
+<script src="../register.js"></script>
+</body></html>
