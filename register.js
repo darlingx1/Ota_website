@@ -1,52 +1,80 @@
 // register.js
 const registerForm = document.querySelector('form');
 
+// Password Visibility Toggle for Register
+document.querySelectorAll('.toggle-password').forEach(button => {
+    button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        const icon = button.querySelector('.material-symbols-outlined');
+
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.textContent = 'visibility_off';
+            icon.classList.add('text-primary'); 
+        } else {
+            input.type = 'password';
+            icon.textContent = 'visibility';
+            icon.classList.remove('text-primary');
+        }
+    });
+});
+
 registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // 1. Grab the button to show loading state
     const submitBtn = registerForm.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerText;
     
-    // Disable button & show "loading"
     submitBtn.disabled = true;
     submitBtn.innerText = "CONNECTING...";
 
-    // 2. Grab the data from your HTML inputs
     const email = document.querySelector('#email').value;
     const username = document.querySelector('#username').value;
     const password = document.querySelector('#password').value;
     const confirmPassword = document.querySelector('#confirm-password').value;
 
-    // 3. Check: Do passwords match?
-    if (password !== confirmPassword) {
-        alert("Passwords do not match!");
+    if (password.length < 8) {
+        alert("CRITICAL ERROR: Password must be at least 8 characters long!");
         submitBtn.disabled = false;
         submitBtn.innerText = originalBtnText;
         return;
     }
 
-    // 4. Send the data to Supabase
+    if (password !== confirmPassword) {
+        alert("CRITICAL ERROR: Passwords do not match!");
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalBtnText;
+        return;
+    }
+
+    // 4. Send the data to Supabase with Redirect Option
     const { data, error } = await window.supabaseClient.auth.signUp({
         email: email,
         password: password,
         options: {
+            // This ensures the email link knows where to go
+            emailRedirectTo: 'http://127.0.0.1:5500/pages/login.html', 
             data: {
-                display_name: username, // Saving username to metadata
+                display_name: username,
             }
         }
     });
 
-    // 5. Handle the result
+    // 5. Handle the result for Email Confirmation
     if (error) {
         alert("Registration failed: " + error.message);
-        // Reset button so they can try again
         submitBtn.disabled = false;
         submitBtn.innerText = originalBtnText;
     } else {
-        // SUCCESS! 
-        console.log("User created successfully!");
-        // We go straight to home.html
-        window.location.href = '/pages/home.html'; 
+        // Check if the user is created but session is null (Means they MUST verify email)
+        if (data.user && !data.session) {
+            alert("NEXUS SIGNAL SENT: Please check your email inbox to verify your account before logging in.");
+            window.location.href = 'login.html'; 
+        } else {
+            // If email confirmation is OFF in Supabase, this will still work
+            console.log("User created and logged in automatically!");
+            window.location.href = 'home.html'; 
+        }
     }
 });

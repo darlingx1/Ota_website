@@ -24,6 +24,15 @@ if (toggleBtn && passwordInput && eyeIcon) {
         eyeIcon.classList.toggle('text-primary', isPassword);
     });
 }
+// Add this to the top of your login script
+const urlParams = new URLSearchParams(window.location.search);
+if (window.location.hash.includes('type=signup') || window.location.href.includes('confirmed')) {
+    // Show a "Nexus Identity Verified" notification
+    const feedback = document.createElement('div');
+    feedback.className = "bg-secondary/20 border border-secondary p-4 rounded-lg text-secondary text-xs mb-4 text-center animate-pulse";
+    feedback.innerText = "IDENTITY VERIFIED. ACCESS GRANTED. PLEASE LOG IN.";
+    document.querySelector('form').prepend(feedback);
+}
 
 // --- LOGIN SUBMISSION LOGIC ---
 loginForm.addEventListener('submit', async (event) => {
