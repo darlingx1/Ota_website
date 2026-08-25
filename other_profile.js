@@ -39,6 +39,14 @@ function formatFollowers(n) {
     if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
     return String(n);
 }
-
+// Message button
+const messageBtn = document.getElementById('message-btn');
+if (messageBtn) {
+    messageBtn.addEventListener('click', () => {
+        const params = new URLSearchParams(window.location.search);
+        const userId = params.get('id');
+        if (userId) window.location.href = `chat.html?user=${userId}`;
+    });
+}
 loadProfile();
 initOtherProfile();
